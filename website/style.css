@@ -1,0 +1,277 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Main background container with blur */
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Blurred background image */
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('logi.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* Ensure content is above blurred background */
+.main > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo styling */
+.icon {
+  width: 200px;
+}
+
+.logo {
+  color: blue;
+  font-size: 35px;
+  font-family: Arial;
+  padding-left: 20px;
+}
+
+/* Menu styling */
+.menu {
+  flex-grow: 1;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: rgb(233, 231, 236);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: black;
+}
+
+/* Search bar styling */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.srch {
+  width: 200px;
+  height: 40px;
+  padding: 5px 10px;
+  font-family: 'Times New Roman', serif;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.srch:focus {
+  outline: none;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  background: rgb(15, 191, 210);
+  border: 2px solid blue;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: blue;
+}
+
+/* Context (hero text area) */
+.context {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.context h1 {
+  font-size: 28px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Join Us button */
+.content .cn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  background: rgb(38, 40, 40);
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.content .cn:hover {
+  background: rgb(0, 233, 233);
+}
+
+/* Form container (login box) */
+.form {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Form header */
+.form h2 {
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  background-color: lightblue;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Input fields */
+.form input {
+  width: 100%;
+  height: 35px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 15px;
+  margin-top: 20px;
+  outline: none;
+}
+
+::placeholder {
+  color: lightblue;
+}
+
+/* Login button */
+.btnn {
+  width: 100%;
+  height: 40px;
+  background: lightblue;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Wrap the login button in a container box */
+.btn-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  margin-top: 40px; /* pushes the button lower */
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Login button inside the box */
+.btnn {
+  width: 100%;
+  height: 60px;
+  background: lightblue;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btnn:hover {
+  background: deepskyblue;
+}
+
+
+.btnn:hover {
+  background: deepskyblue;
+}
+
+/* Additional links under form */
+.link, .liw {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+a {
+  color: cyan;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 10px;
+  text-align: center;
+}
+
